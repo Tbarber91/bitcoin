@@ -1,0 +1,116 @@
+{
+  "version": "1.0.0",
+  "description": "The Alliance - Multichain Registry",
+  "timestamp": "2026-06-16T00:00:00Z",
+  "chains": [
+    {
+      "id": "bitcoin",
+      "name": "Bitcoin",
+      "nativeSymbol": "BTC",
+      "chainType": "utxo",
+      "networks": [
+        {
+          "name": "Mainnet",
+          "chainId": null,
+          "rpc": [
+            "https://btc-mainnet.example.com"
+          ],
+          "explorer": "https://blockchain.com",
+          "status": "active"
+        },
+        {
+          "name": "Testnet",
+          "chainId": null,
+          "rpc": [
+            "https://btc-testnet.example.com"
+          ],
+          "explorer": "https://testnet.blockchain.com",
+          "status": "active"
+        }
+      ],
+      "description": "Bitcoin - The original cryptocurrency and settlement layer"
+    },
+    {
+      "id": "ethereum",
+      "name": "Ethereum",
+      "nativeSymbol": "ETH",
+      "chainType": "evm",
+      "networks": [
+        {
+          "name": "Mainnet",
+          "chainId": 1,
+          "rpc": [
+            "https://eth-mainnet.example.com",
+            "https://rpc.ankr.com/eth"
+          ],
+          "explorer": "https://etherscan.io",
+          "status": "active"
+        },
+        {
+          "name": "Sepolia Testnet",
+          "chainId": 11155111,
+          "rpc": [
+            "https://eth-sepolia.example.com",
+            "https://rpc.sepolia.org"
+          ],
+          "explorer": "https://sepolia.etherscan.io",
+          "status": "active"
+        }
+      ],
+      "description": "Ethereum - Smart contract platform with EVM execution"
+    },
+    {
+      "id": "solana",
+      "name": "Solana",
+      "nativeSymbol": "SOL",
+      "chainType": "solana",
+      "networks": [
+        {
+          "name": "Mainnet",
+          "chainId": "solana-mainnet-beta",
+          "rpc": [
+            "https://api.mainnet-beta.solana.com",
+            "https://solana-mainnet.example.com"
+          ],
+          "explorer": "https://solscan.io",
+          "status": "active"
+        },
+        {
+          "name": "Testnet",
+          "chainId": "solana-testnet",
+          "rpc": [
+            "https://api.testnet.solana.com"
+          ],
+          "explorer": "https://solscan.io?cluster=testnet",
+          "status": "active"
+        }
+      ],
+      "description": "Solana - High-performance blockchain with Proof of History consensus"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-06-16T00:00:00Z",
+    "maintainers": [
+      "Tbarber91"
+    ],
+    "license": "MIT",
+    "repository": "https://github.com/Tbarber91/bitcoin"
+  },
+  "schema": {
+    "chain": {
+      "id": "string - unique identifier",
+      "name": "string - display name",
+      "nativeSymbol": "string - ticker symbol",
+      "chainType": "string - utxo|evm|solana|other",
+      "networks": "array - network configurations",
+      "description": "string - chain description"
+    },
+    "network": {
+      "name": "string - network name",
+      "chainId": "number|string|null - network identifier",
+      "rpc": "array - RPC endpoints",
+      "explorer": "string - block explorer URL",
+      "status": "string - active|deprecated|testnet"
+    }
+  }
+}
