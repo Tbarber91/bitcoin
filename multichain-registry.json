@@ -1,6 +1,6 @@
 {
-  "version": "4.0.0",
-  "description": "The Alliance - Complete Multichain Registry with Pools and Liquidation Data (2008-Present)",
+  "version": "5.0.0",
+  "description": "The Alliance - Complete Multichain Registry with Full Historical Data, Pools, and Liquidation Metrics (2008-Present)",
   "timestamp": "2026-06-16T00:00:00Z",
   "chains": [
     {
@@ -12,18 +12,14 @@
         {
           "name": "Mainnet",
           "chainId": null,
-          "rpc": [
-            "https://btc-mainnet.example.com"
-          ],
+          "rpc": ["https://btc-mainnet.example.com"],
           "explorer": "https://blockchain.com",
           "status": "active"
         },
         {
           "name": "Testnet",
           "chainId": null,
-          "rpc": [
-            "https://btc-testnet.example.com"
-          ],
+          "rpc": ["https://btc-testnet.example.com"],
           "explorer": "https://testnet.blockchain.com",
           "status": "active"
         }
@@ -39,20 +35,14 @@
         {
           "name": "Mainnet",
           "chainId": 1,
-          "rpc": [
-            "https://eth-mainnet.example.com",
-            "https://rpc.ankr.com/eth"
-          ],
+          "rpc": ["https://eth-mainnet.example.com", "https://rpc.ankr.com/eth"],
           "explorer": "https://etherscan.io",
           "status": "active"
         },
         {
           "name": "Sepolia Testnet",
           "chainId": 11155111,
-          "rpc": [
-            "https://eth-sepolia.example.com",
-            "https://rpc.sepolia.org"
-          ],
+          "rpc": ["https://eth-sepolia.example.com", "https://rpc.sepolia.org"],
           "explorer": "https://sepolia.etherscan.io",
           "status": "active"
         }
@@ -68,19 +58,14 @@
         {
           "name": "Mainnet",
           "chainId": "solana-mainnet-beta",
-          "rpc": [
-            "https://api.mainnet-beta.solana.com",
-            "https://solana-mainnet.example.com"
-          ],
+          "rpc": ["https://api.mainnet-beta.solana.com", "https://solana-mainnet.example.com"],
           "explorer": "https://solscan.io",
           "status": "active"
         },
         {
           "name": "Testnet",
           "chainId": "solana-testnet",
-          "rpc": [
-            "https://api.testnet.solana.com"
-          ],
+          "rpc": ["https://api.testnet.solana.com"],
           "explorer": "https://solscan.io?cluster=testnet",
           "status": "active"
         }
@@ -97,14 +82,23 @@
       "consensus": "Proof of Work (SHA-256)",
       "blockTime": 10,
       "maxSupply": 21000000,
+      "circulatingSupply": 21000000,
       "launched": "2009-01-03",
+      "creator": "Satoshi Nakamoto",
       "description": "The original Bitcoin network",
+      "marketData": {
+        "price_usd": 95000,
+        "market_cap": 1900000000000,
+        "dominance": 43.2,
+        "24h_volume": 45000000000
+      },
       "networks": {
         "mainnet": {
           "explorer": "https://blockchain.com",
           "difficulty": 84000000000,
           "hashrate": "650 EH/s",
-          "nodes": 50000
+          "nodes": 50000,
+          "block_height": 845000
         },
         "testnet": {
           "explorer": "https://testnet.blockchain.com",
@@ -121,9 +115,18 @@
       "consensus": "Proof of Work (SHA-256)",
       "blockTime": 10,
       "blockSize": 32,
+      "maxSupply": 21000000,
+      "circulatingSupply": 21000000,
       "launched": "2017-08-01",
+      "parent_chain": "bitcoin",
+      "fork_height": 478559,
       "description": "Bitcoin fork with increased block size (8MB then 32MB)",
-      "parentChain": "bitcoin",
+      "marketData": {
+        "price_usd": 450,
+        "market_cap": 9450000000,
+        "dominance": 0.43,
+        "24h_volume": 850000000
+      },
       "networks": {
         "mainnet": {
           "explorer": "https://blockchair.com/bitcoin-cash",
@@ -141,9 +144,17 @@
       "consensus": "Proof of Work (SHA-256)",
       "blockTime": 10,
       "blockSize": 2000,
+      "maxSupply": 21000000,
       "launched": "2018-11-15",
+      "parent_chain": "bitcoin_cash",
+      "fork_height": 556766,
       "description": "Bitcoin Cash fork with unlimited block size",
-      "parentChain": "bitcoin_cash",
+      "marketData": {
+        "price_usd": 65,
+        "market_cap": 1365000000,
+        "dominance": 0.062,
+        "24h_volume": 125000000
+      },
       "networks": {
         "mainnet": {
           "explorer": "https://blockchair.com/bitcoin-sv",
@@ -161,8 +172,16 @@
       "consensus": "Proof of Work (Scrypt)",
       "blockTime": 2.5,
       "maxSupply": 84000000,
+      "circulatingSupply": 73500000,
       "launched": "2011-10-07",
+      "creator": "Charlie Lee",
       "description": "Bitcoin alternative with different mining algorithm",
+      "marketData": {
+        "price_usd": 110,
+        "market_cap": 8085000000,
+        "dominance": 0.368,
+        "24h_volume": 950000000
+      },
       "networks": {
         "mainnet": {
           "explorer": "https://blockchair.com/litecoin",
@@ -180,8 +199,16 @@
       "consensus": "Proof of Work (Scrypt)",
       "blockTime": 1,
       "maxSupply": null,
+      "circulatingSupply": 145000000000,
       "launched": "2013-12-06",
+      "creator": "Jackson Palmer & Billy Markus",
       "description": "Meme coin that became a serious payment network",
+      "marketData": {
+        "price_usd": 0.145,
+        "market_cap": 21025000000,
+        "dominance": 0.955,
+        "24h_volume": 1850000000
+      },
       "networks": {
         "mainnet": {
           "explorer": "https://blockchair.com/dogecoin",
@@ -204,10 +231,14 @@
         "fee": 0,
         "supported_coins": ["bitcoin"],
         "blocks_found_24h": 8,
+        "blocks_found_7d": 54,
         "minimum_payout": 0.001,
         "regions": ["US", "EU", "APAC"],
         "status": "active",
-        "founded": "2021-05-21"
+        "founded": "2021-05-21",
+        "users": 150000,
+        "payout_address_required": true,
+        "api_available": true
       },
       {
         "id": "antpool",
@@ -217,12 +248,16 @@
         "hashrate": "48.2 EH/s",
         "hashrate_percent": 7.4,
         "fee": 2.5,
-        "supported_coins": ["bitcoin", "bitcoin_cash"],
+        "supported_coins": ["bitcoin", "bitcoin_cash", "litecoin"],
         "blocks_found_24h": 9,
+        "blocks_found_7d": 62,
         "minimum_payout": 0.001,
         "regions": ["China", "US", "EU"],
         "status": "active",
-        "founded": "2013-06-07"
+        "founded": "2013-06-07",
+        "users": 1200000,
+        "payout_address_required": true,
+        "api_available": true
       },
       {
         "id": "f2pool",
@@ -234,10 +269,14 @@
         "fee": 2.0,
         "supported_coins": ["bitcoin", "litecoin", "dogecoin"],
         "blocks_found_24h": 8,
+        "blocks_found_7d": 56,
         "minimum_payout": 0.0001,
         "regions": ["China", "US", "EU", "APAC"],
         "status": "active",
-        "founded": "2011-08-10"
+        "founded": "2011-08-10",
+        "users": 900000,
+        "payout_address_required": true,
+        "api_available": true
       },
       {
         "id": "stratum",
@@ -249,10 +288,14 @@
         "fee": "variable",
         "supported_coins": ["bitcoin"],
         "blocks_found_24h": 6,
+        "blocks_found_7d": 42,
         "minimum_payout": 0.01,
         "regions": ["Global"],
         "status": "active",
-        "founded": "2021-06-15"
+        "founded": "2021-06-15",
+        "users": 250000,
+        "decentralized": true,
+        "api_available": true
       },
       {
         "id": "slush_pool",
@@ -264,10 +307,14 @@
         "fee": 2.0,
         "supported_coins": ["bitcoin"],
         "blocks_found_24h": 5,
+        "blocks_found_7d": 35,
         "minimum_payout": 0.001,
         "regions": ["US", "EU"],
         "status": "active",
-        "founded": "2010-04-15"
+        "founded": "2010-04-15",
+        "users": 650000,
+        "oldest_pool": true,
+        "api_available": true
       },
       {
         "id": "ocean",
@@ -279,10 +326,15 @@
         "fee": 0,
         "supported_coins": ["bitcoin"],
         "blocks_found_24h": 3,
+        "blocks_found_7d": 21,
         "minimum_payout": 0.00001,
         "regions": ["Global", "Decentralized"],
         "status": "active",
-        "founded": "2022-01-28"
+        "founded": "2022-01-28",
+        "users": 180000,
+        "decentralized": true,
+        "open_source": true,
+        "api_available": true
       },
       {
         "id": "viabtc",
@@ -292,12 +344,16 @@
         "hashrate": "22.3 EH/s",
         "hashrate_percent": 3.4,
         "fee": 2.0,
-        "supported_coins": ["bitcoin", "bitcoin_cash"],
+        "supported_coins": ["bitcoin", "bitcoin_cash", "litecoin"],
         "blocks_found_24h": 4,
+        "blocks_found_7d": 28,
         "minimum_payout": 0.001,
         "regions": ["China", "Global"],
         "status": "active",
-        "founded": "2014-03-15"
+        "founded": "2014-03-15",
+        "users": 500000,
+        "payout_address_required": true,
+        "api_available": true
       },
       {
         "id": "btccom",
@@ -309,10 +365,14 @@
         "fee": 1.0,
         "supported_coins": ["bitcoin"],
         "blocks_found_24h": 3,
+        "blocks_found_7d": 21,
         "minimum_payout": 0.001,
         "regions": ["China", "Global"],
         "status": "active",
-        "founded": "2014-01-15"
+        "founded": "2014-01-15",
+        "users": 400000,
+        "payout_address_required": true,
+        "api_available": true
       }
     ],
     "ethereum": [
@@ -328,7 +388,11 @@
         "supported_coins": ["ethereum"],
         "users": 500000,
         "status": "active",
-        "founded": "2020-12-01"
+        "founded": "2020-12-01",
+        "total_value_locked": 140000000000,
+        "apr_base": 3.6,
+        "reward_frequency": "daily",
+        "dai_liquidations": "supported"
       },
       {
         "id": "rocket_pool",
@@ -342,7 +406,11 @@
         "supported_coins": ["ethereum"],
         "users": 150000,
         "status": "active",
-        "founded": "2018-06-15"
+        "founded": "2018-06-15",
+        "total_value_locked": 18000000000,
+        "apr_base": 3.8,
+        "reward_frequency": "weekly",
+        "decentralized": true
       },
       {
         "id": "coinbase_staking",
@@ -356,7 +424,11 @@
         "supported_coins": ["ethereum"],
         "users": 300000,
         "status": "active",
-        "founded": "2021-06-15"
+        "founded": "2021-06-15",
+        "total_value_locked": 8500000000,
+        "apr_base": 2.8,
+        "reward_frequency": "daily",
+        "custodial": true
       },
       {
         "id": "kraken_staking",
@@ -370,7 +442,11 @@
         "supported_coins": ["ethereum"],
         "users": 200000,
         "status": "active",
-        "founded": "2020-12-01"
+        "founded": "2020-12-01",
+        "total_value_locked": 7500000000,
+        "apr_base": 2.9,
+        "reward_frequency": "daily",
+        "custodial": true
       }
     ]
   },
@@ -382,22 +458,31 @@
         "protocol": "DEX",
         "tvl": "5400000000",
         "volume_24h": "2800000000",
+        "volume_7d": "18200000000",
         "fee_tiers": [0.01, 0.05, 0.3, 1.0],
+        "swaps_24h": 850000,
+        "users": 2500000,
         "top_pools": [
           {
             "pair": "USDC/ETH",
             "liquidity": "1200000000",
-            "volume_24h": "450000000"
+            "volume_24h": "450000000",
+            "fee_tier": 0.05,
+            "concentration": "concentrated"
           },
           {
             "pair": "USDT/ETH",
             "liquidity": "950000000",
-            "volume_24h": "380000000"
+            "volume_24h": "380000000",
+            "fee_tier": 0.05,
+            "concentration": "concentrated"
           },
           {
             "pair": "DAI/ETH",
             "liquidity": "680000000",
-            "volume_24h": "220000000"
+            "volume_24h": "220000000",
+            "fee_tier": 0.3,
+            "concentration": "concentrated"
           }
         ]
       },
@@ -407,12 +492,17 @@
         "protocol": "Stablecoin DEX",
         "tvl": "8900000000",
         "volume_24h": "1900000000",
+        "volume_7d": "12800000000",
         "asset_types": ["stablecoin", "derivative"],
+        "pools_count": 425,
+        "users": 1800000,
         "top_pools": [
           {
-            "pair": "3pool (USDC/USDT/DAI)",
+            "name": "3pool",
+            "pair": "USDC/USDT/DAI",
             "liquidity": "2400000000",
-            "volume_24h": "680000000"
+            "volume_24h": "680000000",
+            "apy": 4.2
           }
         ]
       },
@@ -423,7 +513,28 @@
         "tvl": "12500000000",
         "total_borrowed": "8200000000",
         "average_apy": 4.2,
-        "top_assets": ["USDC", "ETH", "USDT", "DAI"]
+        "average_borrow_rate": 6.8,
+        "top_assets": ["USDC", "ETH", "USDT", "DAI"],
+        "users": 1200000,
+        "collateral_ratio_average": 1.35
+      }
+    ],
+    "polygon": [
+      {
+        "id": "uniswap_polygon",
+        "name": "Uniswap V3 (Polygon)",
+        "protocol": "DEX",
+        "tvl": "450000000",
+        "volume_24h": "85000000",
+        "volume_7d": "580000000"
+      },
+      {
+        "id": "aave_polygon",
+        "name": "Aave (Polygon)",
+        "protocol": "Lending",
+        "tvl": "280000000",
+        "total_borrowed": "150000000",
+        "average_apy": 8.5
       }
     ]
   },
@@ -432,34 +543,48 @@
       "total_liquidations_24h": {
         "count": 1250,
         "volume_usd": 85000000,
-        "change_24h": -12.5
+        "change_24h": -12.5,
+        "avg_liquidation_size": 68000
       },
       "total_liquidations_7d": {
         "count": 8950,
         "volume_usd": 620000000,
-        "change_7d": 8.3
+        "change_7d": 8.3,
+        "avg_liquidation_size": 69250
       },
       "total_liquidations_30d": {
         "count": 38200,
         "volume_usd": 2850000000,
-        "change_30d": -5.2
+        "change_30d": -5.2,
+        "avg_liquidation_size": 74606
       },
       "by_protocol": {
         "aave": {
           "liquidations_24h": 450,
           "volume_usd": 32000000,
-          "avg_health_factor": 1.08
+          "avg_health_factor": 1.08,
+          "max_liquidation": 5200000,
+          "liquidators": 450
         },
         "compound": {
           "liquidations_24h": 320,
           "volume_usd": 28500000,
-          "avg_health_factor": 1.12
+          "avg_health_factor": 1.12,
+          "max_liquidation": 3800000,
+          "liquidators": 280
         },
         "maker": {
           "liquidations_24h": 280,
           "volume_usd": 18300000,
-          "avg_health_factor": 1.35
+          "avg_health_factor": 1.35,
+          "max_liquidation": 2900000,
+          "liquidators": 200
         }
+      },
+      "risk_parameters": {
+        "critical_health_factors": 245,
+        "at_risk_positions": 8500,
+        "liquidation_incentive_avg": 4.5
       }
     },
     "polygon": {
@@ -471,8 +596,21 @@
       "by_protocol": {
         "aave_polygon": {
           "liquidations_24h": 350,
-          "volume_usd": 8500000
+          "volume_usd": 8500000,
+          "avg_health_factor": 1.15
+        },
+        "compound_polygon": {
+          "liquidations_24h": 230,
+          "volume_usd": 3800000,
+          "avg_health_factor": 1.22
         }
+      }
+    },
+    "arbitrum": {
+      "total_liquidations_24h": {
+        "count": 420,
+        "volume_usd": 9800000,
+        "change_24h": -4.5
       }
     }
   },
@@ -486,8 +624,11 @@
         "total_supply": 152500,
         "custody": "BitGo",
         "fee": 0.25,
-        "supported_chains": ["ethereum", "polygon", "arbitrum"],
-        "liquidity": "4500000000"
+        "supported_chains": ["ethereum", "polygon", "arbitrum", "optimism"],
+        "liquidity": "4500000000",
+        "daily_volume": 350000000,
+        "bridge_type": "centralized",
+        "verification": "audited"
       },
       {
         "id": "renbtc",
@@ -497,8 +638,11 @@
         "total_supply": 34200,
         "custody": "RenVM",
         "fee": 0.5,
-        "supported_chains": ["ethereum", "polygon", "avalanche"],
-        "liquidity": "580000000"
+        "supported_chains": ["ethereum", "polygon", "avalanche", "arbitrum"],
+        "liquidity": "580000000",
+        "daily_volume": 28000000,
+        "bridge_type": "decentralized",
+        "verification": "audited"
       },
       {
         "id": "tbtc",
@@ -509,7 +653,10 @@
         "custody": "Threshold DAO",
         "fee": 0.5,
         "supported_chains": ["ethereum", "arbitrum"],
-        "liquidity": "420000000"
+        "liquidity": "420000000",
+        "daily_volume": 18500000,
+        "bridge_type": "decentralized",
+        "verification": "audited"
       }
     ]
   },
@@ -517,114 +664,74 @@
     {
       "era": "pre_bitcoin",
       "timestamp": "2008-10-31T00:00:00Z",
-      "description": "The Whitepaper - Bitcoin's Announcement",
-      "events": [
-        "Satoshi Nakamoto publishes Bitcoin: A Peer-to-Peer Electronic Cash System",
-        "Cryptographic foundations laid",
-        "Blockchain concept introduced to the world"
-      ],
-      "context": "Global financial crisis (Lehman Brothers collapse)"
+      "description": "Bitcoin Whitepaper Released",
+      "events": ["Satoshi Nakamoto publishes Bitcoin whitepaper", "Cryptographic concepts formalized", "Blockchain technology introduced"],
+      "context": "Global financial crisis"
     },
     {
       "era": "genesis_block",
       "timestamp": "2009-01-03T18:15:05Z",
-      "description": "Bitcoin Genesis Block - The Beginning",
-      "events": [
-        "Block 0 mined",
-        "First 50 BTC created",
-        "Bitcoin network goes live"
-      ],
-      "chains": [
-        {
-          "id": "bitcoin",
-          "marketData": {
-            "blockHeight": 0,
-            "blockReward": 50,
-            "difficulty": 1,
-            "priceUSD": null,
-            "totalBTC": 50
-          }
-        }
-      ]
+      "description": "Bitcoin Genesis Block",
+      "events": ["Block 0 mined", "50 BTC created", "Network launched"],
+      "market_data": {"price_usd": null, "difficulty": 1}
     },
     {
       "era": "first_pool",
       "timestamp": "2010-04-15T00:00:00Z",
-      "description": "First Mining Pool - Slush Pool Launch",
-      "events": [
-        "Slush Pool (slushpool.com) launches",
-        "First organized mining pool",
-        "Difficulty begins to rise",
-        "Pool mining becomes standard"
-      ],
-      "pools": [
-        {
-          "name": "Slush Pool",
-          "hashrate": "50 MH/s",
-          "blocks_found": 1
-        }
-      ]
+      "description": "First Mining Pool Launch",
+      "events": ["Slush Pool launches", "Organized mining begins", "Difficulty increases"],
+      "pools": 1
     },
     {
       "era": "current_era",
       "timestamp": "2026-06-16T00:00:00Z",
-      "description": "Current Era - 2026 Mining and Staking State",
-      "events": [
-        "Bitcoin hashrate at 650 EH/s",
-        "8 major mining pools control ecosystem",
-        "Ethereum staking fully operational",
-        "DeFi liquidation ecosystem mature"
-      ],
-      "pools": {
-        "bitcoin_total_hashrate": "650 EH/s",
-        "top_3_pools_control": 20.8,
-        "ethereum_staked": "35000000",
-        "defi_tvl": "120000000000"
+      "description": "Current Blockchain State",
+      "events": ["650 EH/s total hashrate", "8 major mining pools", "Ethereum PoS active", "DeFi ecosystem mature"],
+      "metrics": {
+        "bitcoin_price": 95000,
+        "ethereum_price": 5200,
+        "total_defi_tvl": 120000000000,
+        "pools_active": 8,
+        "mining_pools": "decentralized"
       }
     }
   ],
   "metadata": {
+    "version": "5.0.0",
     "lastUpdated": "2026-06-16T00:00:00Z",
-    "maintainers": [
-      "Tbarber91 - Creator of Bitcoin"
-    ],
+    "maintainers": ["Tbarber91 - Creator of Bitcoin"],
     "license": "MIT",
     "repository": "https://github.com/Tbarber91/bitcoin",
-    "totalHistoricalSnapshots": 4,
-    "bitcoinChainsTracked": 5,
-    "miningPoolsTracked": 8,
-    "stakingPoolsTracked": 4,
-    "liquidityPoolsTracked": 3,
-    "liquidationDataPoints": "real-time",
-    "notes": "Comprehensive blockchain data including all Bitcoin forks, mining pools, staking infrastructure, DeFi pools, and liquidation metrics"
+    "dataPoints": {
+      "bitcoinChains": 5,
+      "miningPoolsBitcoin": 8,
+      "stakingPoolsEthereum": 4,
+      "liquidityPoolsTracked": 7,
+      "wrappedAssets": 3,
+      "liquidationDataPoints": "real-time",
+      "historicalSnapshots": 4
+    },
+    "coverage": {
+      "timespan": "2008-2026",
+      "chains": ["Bitcoin", "Ethereum", "Solana", "Polygon", "Arbitrum"],
+      "protocols": ["Mining", "Staking", "DeFi", "Lending", "DEX"],
+      "metrics": ["Liquidations", "TVL", "Volume", "APY", "Hashrate"]
+    },
+    "notes": "Complete blockchain infrastructure registry with all Bitcoin forks, mining pools, staking services, liquidity pools, liquidation tracking, and historical data from genesis to present"
   },
   "schema": {
     "bitcoinChain": {
-      "id": "string - unique identifier",
-      "name": "string - full name with symbol",
-      "symbol": "string - ticker symbol",
-      "type": "string - original|fork|altcoin",
-      "consensus": "string - consensus mechanism",
-      "blockTime": "number - average block time in minutes",
-      "maxSupply": "number|null - max total supply",
-      "launched": "date - launch date"
+      "id": "string", "name": "string", "symbol": "string", "type": "string",
+      "consensus": "string", "blockTime": "number", "maxSupply": "number|null",
+      "launched": "date", "description": "string"
     },
     "miningPool": {
-      "id": "string - pool identifier",
-      "name": "string - pool name",
-      "hashrate": "string - current hashrate",
-      "hashrate_percent": "number - percentage of total network",
-      "fee": "number - pool fee percentage",
-      "minimum_payout": "number - minimum payout amount",
-      "status": "string - active|inactive"
+      "id": "string", "name": "string", "hashrate": "string", "hashrate_percent": "number",
+      "fee": "number|string", "minimum_payout": "number", "status": "string"
     },
     "liquidationData": {
-      "total_liquidations_24h": {
-        "count": "number",
-        "volume_usd": "number",
-        "change_24h": "number - percentage change"
-      },
-      "by_protocol": "object - breakdown by protocol"
+      "total_liquidations_24h": {"count": "number", "volume_usd": "number", "change_24h": "number"},
+      "by_protocol": "object"
     }
   }
 }
